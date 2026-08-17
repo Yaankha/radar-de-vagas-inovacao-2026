@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raio-X das vagas de inovação em 2026 | Yaankha Bharbara</title>
+<meta name="description" content="Análise de vagas de inovação em ciência e deep tech no Brasil em 2026: palavras-chave de busca, competências mais pedidas e panorama de mercado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#FFF5FC;
+  --bg-card:#FFFFFF;
+  --bg-subtle:#F8DDF4;
+  --border:#EAD6E5;
+  --text:#2B2B2B;
+  --text-secondary:#707070; /* ajustado de #8C8C8C (brand) para 4.5:1+ de contraste em texto de corpo */
+  --magenta:#B5179E;
+  --magenta-wash:#B5179E1A;
+  --roxo:#7209B7;
+  --roxo-wash:#7209B71A;
+  --turq:#4CC9F0;
+  --turq-wash:#4CC9F01A;
+  --amber:#E3A93B;
+  --amber-bg:#FBF0DC;
+  --amber-border:#E3A93B66;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 1px 2px rgba(43,20,40,.04), 0 4px 16px rgba(43,20,40,.06);
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-serif:'Source Serif 4',Georgia,serif;
+  --font-mono:'JetBrains Mono','SFMono-Regular',Consolas,monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- top nav ---------- */
+.topnav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,245,252,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.topnav .wrap{display:flex;align-items:center;gap:14px;padding-top:14px;padding-bottom:14px;}
+.topnav .brand{font-family:var(--font-serif);font-weight:600;font-size:17px;white-space:nowrap;color:var(--text);text-decoration:none;flex-shrink:0;}
+.topnav nav{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;min-width:0;scrollbar-width:none;}
+.topnav nav::-webkit-scrollbar{display:none;}
+.topnav nav a{
+  white-space:nowrap;font-size:13.5px;font-weight:600;color:var(--text-secondary);
+  text-decoration:none;padding:7px 12px;border-radius:999px;transition:background .15s,color .15s;
+}
+.topnav nav a:hover{background:var(--bg-subtle);color:var(--magenta);}
+
+/* ---------- hero ---------- */
+.hero{padding:56px 0 40px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.decor-blob{position:absolute;top:-30px;right:-20px;width:260px;height:260px;pointer-events:none;z-index:0;opacity:.9;}
+.decor-blob svg{width:100%;height:100%;display:block;}
+.decor-blob--nl{width:190px;height:190px;top:-24px;right:-16px;opacity:.8;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--magenta);background:var(--magenta-wash);border:1px solid var(--magenta);
+  padding:5px 12px;border-radius:999px;margin-bottom:20px;
+  text-decoration:none;cursor:pointer;transition:background .15s,color .15s;
+}
+.eyebrow:hover{background:var(--magenta);color:#fff;}
+.hero h1{
+  font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4.4vw,44px);
+  line-height:1.14;margin:0 0 20px;letter-spacing:-.01em;max-width:820px;
+}
+.hero .lede{font-size:17px;color:var(--text);max-width:680px;margin:0 0 8px;}
+.hero .lede + .lede{margin-top:12px;}
+.byline{
+  margin-top:28px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-size:13.5px;color:var(--text-secondary);
+}
+.byline a{color:var(--magenta);font-weight:600;text-decoration:none;border-bottom:1px solid transparent;}
+.byline a:hover{border-color:var(--magenta);}
+.byline .dot{color:var(--border);}
+
+.methodology{
+  margin-top:24px;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px 20px;font-size:13.5px;color:var(--text-secondary);
+  display:flex;gap:12px;align-items:flex-start;
+}
+.methodology strong{color:var(--text);}
+.methodology .icon{flex-shrink:0;font-family:var(--font-mono);font-size:16px;color:var(--roxo);}
+
+/* ---------- sections ---------- */
+section.block{padding:56px 0;border-bottom:1px solid var(--border);}
+section.block:last-of-type{border-bottom:none;}
+.block-head{margin-bottom:28px;max-width:720px;}
+.block-kicker{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--roxo);margin-bottom:10px;font-weight:600;
+}
+.block-head h2{font-family:var(--font-serif);font-size:clamp(22px,3vw,30px);margin:0 0 12px;font-weight:600;letter-spacing:-.01em;}
+.block-head p{margin:0;color:var(--text-secondary);font-size:15px;line-height:1.6;}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 22px 18px;box-shadow:var(--shadow);
+}
+.card h3{
+  font-family:var(--font-sans);font-size:14px;font-weight:700;margin:0 0 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+.card h3 .muted{font-weight:500;color:var(--text-secondary);font-size:12px;font-family:var(--font-mono);white-space:nowrap;}
+
+/* ---------- bar chart ---------- */
+/* A grade é da LISTA inteira, não de cada linha — antes cada .bar-row montava
+   sua própria grade isolada, e a coluna "auto" (o texto "16/73 · 21,9%")
+   podia crescer mais numa linha do que noutra (número de 2 dígitos, decimal
+   maior), roubando espaço do track e deixando as barras com tracks de
+   larguras diferentes entre si, fora do alinhamento. Com uma única grade
+   compartilhada, a coluna de valor cresce até caber o maior texto de toda a
+   lista, aplicado igual em toda linha — todo track nasce com a mesma largura
+   e a mesma borda direita.
+   .bar-row vira "display:contents": não gera caixa própria, só entrega seus
+   3 filhos (label/track/value) pra ocupar as 3 colunas da grade do .barlist. */
+.barlist{
+  display:grid;grid-template-columns:150px 1fr auto;
+  row-gap:9px;column-gap:10px;align-items:center;
+}
+.bar-row{display:contents;}
+.bar-row .label{font-size:13px;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:help;}
+.bar-row:hover .label{color:var(--magenta);}
+.bar-track{position:relative;height:20px;background:var(--bg-subtle);border-radius:5px;overflow:hidden;cursor:help;}
+.bar-fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:5px 4px 4px 5px;
+  min-width:6px;transition:width .5s cubic-bezier(.2,.8,.2,1);
+  box-shadow:inset 0 0 0 1px rgba(43,43,43,.1);
+}
+.bar-fill.magenta{background:var(--magenta);}
+.bar-fill.roxo{background:var(--roxo);}
+.bar-fill.turq{background:var(--turq);}
+.bar-value{
+  font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);
+  white-space:nowrap;text-align:right;cursor:help;
+}
+.bar-value b{color:var(--text);font-weight:700;}
+
+@media (max-width:640px){
+  .barlist{grid-template-columns:110px 1fr auto;}
+  .bar-value{font-size:11px;}
+}
+
+/* ---------- chips ---------- */
+.chipgrid{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--bg-subtle);border:1px solid var(--border);border-radius:999px;
+  padding:6px 12px;font-size:12.5px;color:var(--text);
+}
+.chip b{font-family:var(--font-mono);font-weight:700;color:var(--roxo);white-space:nowrap;}
+.chip.rare{background:var(--turq-wash);border-color:var(--turq);}
+.chip.rare b{color:var(--text);}
+
+/* ---------- tabs (filters) ---------- */
+.tabrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.tabbtn{
+  font-family:var(--font-sans);font-size:13px;font-weight:600;color:var(--text-secondary);
+  background:var(--bg-card);border:1px solid var(--border);border-radius:999px;
+  padding:8px 14px;cursor:pointer;transition:all .15s;
+}
+.tabbtn:hover{border-color:var(--magenta);color:var(--magenta);}
+.tabbtn.active{background:var(--magenta);border-color:var(--magenta);color:#fff;}
+
+/* ---------- stat tiles ---------- */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+.stat-tile{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 18px 16px;box-shadow:var(--shadow);
+}
+.stat-tile .value{
+  font-family:var(--font-mono);font-weight:700;font-size:28px;color:var(--text);
+  white-space:nowrap;line-height:1.1;margin-bottom:6px;
+}
+.stat-tile .value .frac{font-family:var(--font-mono);font-size:15px;color:var(--text-secondary);font-weight:500;margin-left:6px;}
+.stat-tile .label{font-family:var(--font-sans);font-size:13px;color:var(--text-secondary);line-height:1.4;}
+.stat-tile .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(43,43,43,.12);}
+.stat-tile .dot.magenta{background:var(--magenta);}
+.stat-tile .dot.roxo{background:var(--roxo);}
+.stat-tile .dot.turq{background:var(--turq);}
+
+.insight{
+  margin-top:22px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;font-size:14.5px;line-height:1.6;
+}
+.insight strong{color:var(--roxo);}
+.insight.amber{background:var(--amber-bg);border-color:var(--amber-border);}
+.insight.amber strong{color:#8a6414;}
+.insight p{margin:0 0 10px;}
+.insight p:last-child{margin-bottom:0;}
+
+/* ---------- panorama layout ---------- */
+.panorama-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;margin-bottom:20px;align-items:start;}
+.month-compare{display:flex;gap:14px;margin-top:18px;}
+.month-card{flex:1;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;}
+.month-card .m-title{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--text-secondary);margin-bottom:6px;}
+.month-card .m-value{font-size:24px;font-weight:700;font-family:var(--font-mono);white-space:nowrap;color:var(--text);}
+.month-card .m-value span{font-family:var(--font-sans);font-size:13px;color:var(--text-secondary);font-weight:500;margin-left:6px;}
+
+.company-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+
+/* ---------- explorer ---------- */
+.filters{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 16px;margin-bottom:22px;position:sticky;top:60px;z-index:10;box-shadow:var(--shadow);
+}
+.filters select, .filters input[type=text]{
+  font-family:var(--font-sans);font-size:13px;color:var(--text);
+  background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:8px 10px;min-width:0;
+}
+.filters input[type=text]{flex:1;min-width:160px;}
+.filters .count{font-family:var(--font-mono);font-size:12.5px;color:var(--text-secondary);margin-left:auto;white-space:nowrap;}
+.filters .reset{
+  font-size:12.5px;font-weight:600;color:var(--magenta);background:none;border:1px solid var(--magenta);
+  border-radius:var(--radius-sm);padding:7px 10px;cursor:pointer;white-space:nowrap;
+}
+
+.month-sep{
+  font-family:var(--font-serif);font-size:20px;font-weight:600;color:var(--text);
+  margin:30px 0 14px;padding-top:6px;
+}
+.month-sep:first-child{margin-top:0;}
+.month-sep .n{font-family:var(--font-mono);font-size:13px;color:var(--text-secondary);font-weight:400;margin-left:8px;white-space:nowrap;}
+
+/* Grid com áreas nomeadas em vez de flex-wrap: o card tem 4 blocos (header,
+   cta, tags, resumo) e cada breakpoint só declara ONDE cada área fica — sem
+   depender de quebra de linha automática, que é o que gerava o espaçamento
+   estranho na faixa de largura entre o desktop e o corte mobile antigo. */
+.job-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;margin-bottom:12px;box-shadow:var(--shadow);
+  display:grid;row-gap:10px;column-gap:16px;
+  grid-template-columns:1fr auto;
+  grid-template-areas:"header cta" "tags tags" "resumo resumo";
+}
+.job-card .jc-header{grid-area:header;min-width:0;}
+.job-card .cta{grid-area:cta;align-self:start;}
+.job-card .tags{grid-area:tags;display:flex;flex-wrap:wrap;gap:6px;}
+.job-card .resumo{grid-area:resumo;}
+.job-card h4{font-family:var(--font-sans);font-size:16px;font-weight:700;margin:0 0 4px;}
+.job-card .company{font-size:13.5px;color:var(--roxo);font-weight:600;margin:0;}
+.job-card .tag{
+  font-size:11px;font-weight:600;color:var(--text-secondary);background:var(--bg-subtle);
+  border-radius:6px;padding:3px 8px;white-space:nowrap;
+}
+.job-card .resumo{font-size:13.5px;color:var(--text);opacity:.85;line-height:1.55;margin:0;}
+.job-card .cta{
+  font-size:13px;font-weight:700;color:#fff;background:var(--magenta);
+  border-radius:999px;padding:9px 16px;text-decoration:none;white-space:nowrap;
+  transition:background .15s;text-align:center;
+}
+.job-card .cta:hover{background:var(--roxo);}
+.job-card .cta.disabled{background:var(--border);color:var(--text-secondary);pointer-events:none;}
+/* Telas estreitas: cta desce pro fim do card (depois do resumo) e vira
+   largura total, em vez de ficar espremido ao lado do título — ordem de
+   leitura fica título → empresa → tags → resumo → chamada pra ação. */
+@media (max-width:760px){
+  .job-card{grid-template-columns:1fr;grid-template-areas:"header" "tags" "resumo" "cta";}
+}
+.empty-state{text-align:center;padding:48px 20px;color:var(--text-secondary);font-size:14px;}
+
+/* ---------- newsletter ---------- */
+.newsletter{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:20px;padding:44px 40px;color:var(--text);margin:0 0 0;
+  display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.newsletter .nl-text{max-width:560px;position:relative;z-index:1;}
+.newsletter .nl-kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--roxo);font-weight:600;margin-bottom:14px;}
+.newsletter .nl-logo{max-width:340px;width:100%;height:auto;display:block;margin-bottom:14px;}
+.newsletter p{margin:0;font-size:14.5px;line-height:1.6;color:var(--text-secondary);}
+.newsletter .nl-btn{
+  flex-shrink:0;background:var(--magenta);color:#fff;font-weight:700;font-size:14.5px;
+  padding:14px 26px;border-radius:999px;text-decoration:none;white-space:nowrap;position:relative;z-index:1;
+  transition:transform .15s,box-shadow .15s,background .15s;box-shadow:0 4px 14px rgba(181,23,158,.25);
+}
+.newsletter .nl-btn:hover{background:var(--roxo);transform:translateY(-2px);box-shadow:0 8px 20px rgba(114,9,183,.3);}
+
+/* ---------- footer ---------- */
+footer{padding:36px 0 60px;text-align:center;}
+footer .credit{font-size:13px;color:var(--text-secondary);}
+footer .credit a{color:var(--magenta);font-weight:600;text-decoration:none;}
+footer .credit a:hover{text-decoration:underline;}
+
+@media (max-width:860px){
+  .grid-2{grid-template-columns:1fr;}
+  .panorama-grid{grid-template-columns:1fr;}
+  .newsletter{flex-direction:column;align-items:flex-start;padding:32px 24px;}
+  .filters{position:static;}
+  /* nesta largura o texto da newsletter já ocupa a largura toda do card;
+     sem encolher, o blob decorativo de 190px passa por cima do título/nl-kicker. */
+  .decor-blob--nl{width:120px;height:120px;top:-14px;right:-14px;opacity:.6;}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px;}
+  .hero{padding:40px 0 32px;}
+  section.block{padding:40px 0;}
+  .month-compare{flex-direction:column;}
+  .topnav .brand{font-size:14px;}
+  .topnav nav a{padding:7px 9px;font-size:12.5px;}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .filters{gap:8px;}
+  .filters .count{margin-left:0;width:100%;text-align:right;}
+  /* o blob de 260px é ~70%+ da largura de um celular comum — sem isso ele
+     invade a badge "eyebrow" e o título. Reduzido, mais transparente e
+     deslocado pra fora, só como textura de fundo, nunca sobre o texto. */
+  .decor-blob{width:130px;height:130px;top:-10px;right:-10px;opacity:.55;}
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Raio-X de Vagas · Inovação 2026</a>
+    <nav>
+      <a href="#palavras-chave">Palavras-chave</a>
+      <a href="#competencias">Competências</a>
+      <a href="#panorama">Panorama</a>
+      <a href="#explorador">Explorador</a>
+      <a href="#newsletter">Newsletter</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="inicio">
+  <div class="decor-blob" aria-hidden="true"><svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blobGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4CC9F0"/>
+      <stop offset="0.55" stop-color="#B5179E"/>
+      <stop offset="1" stop-color="#7209B7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="205" cy="55" r="170" fill="none" stroke="#EAD6E5" stroke-width="1"/>
+  <circle cx="205" cy="55" r="120" fill="none" stroke="#EAD6E5" stroke-width="1"/>
+  <circle cx="205" cy="55" r="72" fill="none" stroke="#EAD6E5" stroke-width="1"/>
+  <path d="M178.0,82.0 Q186.1,103.9 208.0,112.0 Q186.1,120.1 178.0,142.0 Q169.9,120.1 148.0,112.0 Q169.9,103.9 178.0,82.0 Z" fill="url(#blobGrad)" opacity="0.92"/>
+  <circle cx="222" cy="168" r="4" fill="#4CC9F0" opacity="0.6"/>
+</svg></div>
+  <div class="wrap" style="position:relative;z-index:1;">
+    <a class="eyebrow" href="https://yaankhabharbara.substack.com/" target="_blank" rel="noopener noreferrer">Painel de inteligência de carreira · Yaankha, me ajuda!</a>
+    <h1>Raio-X das vagas de inovação em 2026</h1>
+    <p class="lede">Fui atrás dos anúncios de vagas de inovação em ciência e deep tech com inscrições abertas ao longo de 2026. O vocabulário usado nos títulos e nas descrições revela mais sobre o setor do que qualquer relatório de tendências e mostra por onde um perfil de carreira tem mais chance de entrar.</p>
+
+    <div class="stat-grid" style="margin-top:28px;">
+      <div class="stat-tile">
+        <div class="value nowrap" id="stat-total">–</div>
+        <div class="label">vagas mapeadas</div>
+      </div>
+      <div class="stat-tile">
+        <div class="value nowrap" id="stat-empresas">–</div>
+        <div class="label">empresas e instituições</div>
+      </div>
+      <div class="stat-tile">
+        <div class="value nowrap" id="stat-setores">–</div>
+        <div class="label">setores diferentes</div>
+      </div>
+      <div class="stat-tile">
+        <div class="value nowrap" id="stat-meses">–</div>
+        <div class="label">meses cobertos (2026)</div>
+      </div>
+    </div>
+
+    <div class="methodology">
+      <span class="icon">i</span>
+      <div>
+        <strong>Como este painel foi construído:</strong> mapeamento e leitura manuais das <span id="meta-total">–</span> vagas mapeadas em 2026, majoritariamente publicadas no LinkedIn. Não é um censo do mercado de trabalho em inovação, mas uma leitura qualificada de um recorte real, que cresce mês a mês ao longo do ano. Volte aqui para acompanhar como os padrões mudam.
+      </div>
+    </div>
+
+    <div class="byline">
+      <span>Análise e curadoria: <a href="https://www.linkedin.com/in/yaankha/" target="_blank" rel="noopener noreferrer">Yaankha Bharbara</a></span>
+      <span class="dot">·</span>
+      <span>Atualizado em agosto de 2026</span>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="palavras-chave">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="block-kicker">Seção 01</div>
+      <h2>Palavras-chave para busca de candidatos</h2>
+      <p>O vocabulário que mais se repete nos títulos e nas descrições é o que um recrutador provavelmente digita para buscar os candidatos certos. Mas frequência não é necessariamente hierarquia de valor: um termo raro e específico pode filtrar melhor do que um termo genérico presente em metade das vagas.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Nos títulos das vagas <span class="muted">top 10</span></h3>
+        <div class="barlist" id="chart-title-kw"></div>
+      </div>
+      <div class="card">
+        <h3>Nas descrições completas <span class="muted">top 10</span></h3>
+        <div class="barlist" id="chart-desc-kw"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>Termos raros que funcionam como filtro fino</h3>
+      <div class="chipgrid" id="chips-rare"></div>
+      <div class="insight">
+        <p><strong>Leitura estratégica:</strong> FINEP e FAPESP aparecem em poucas vagas, mas quem carrega esse vocabulário no perfil sinaliza vivência real em fomento à pesquisa — o tipo de match que um filtro genérico do tipo “inovação” não separa. Para quem escreve o próprio perfil: nomear a agência, o edital ou o programa específico com que já trabalhou pesa mais do que repetir “inovação aberta” mais uma vez.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="competencias">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="block-kicker">Seção 02</div>
+      <h2>Competências mais pedidas</h2>
+      <p>Quantas vagas mencionam cada competência — técnica ou comportamental — em algum ponto da descrição. Isso mede presença, não profundidade: uma vaga pode citar “gestão de projetos” de passagem ou como exigência central. Navegue pelos filtros abaixo para comparar por tipo de competência.</p>
+    </div>
+
+    <div class="tabrow" id="skill-tabs"></div>
+
+    <div class="card">
+      <h3><span id="skill-chart-title">—</span> <span class="muted">% das vagas que mencionam</span></h3>
+      <div class="barlist" id="chart-skills"></div>
+    </div>
+
+    <div class="insight">
+      <p><strong>KPI e indicadores lideram, presentes em quase 6 de cada 10 vagas.</strong> Inovação corporativa no Brasil já não se sustenta só na narrativa: ela pede número, meta e resultado mensurável. Design Thinking e Lean aparecem em cerca de 1 a cada 4 vagas — ainda relevantes, mas longe de unanimidade. Vale menos decorar framework e mais saber traduzir uma iniciativa em indicador.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="panorama">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="block-kicker">Seção 03</div>
+      <h2>Panorama de mercado</h2>
+      <p>Quem está contratando, em que formato de trabalho e para qual nível de senioridade.</p>
+    </div>
+
+    <div class="panorama-grid">
+      <div class="card">
+        <h3>Setor de quem contrata <span class="muted">nº de vagas</span></h3>
+        <div class="barlist" id="chart-setor"></div>
+      </div>
+      <div class="card">
+        <h3>Modalidade <span class="muted">nº de vagas</span></h3>
+        <div class="barlist" id="chart-modalidade"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Senioridade <span class="muted">lida a partir do título</span></h3>
+      <div class="barlist" id="chart-senioridade"></div>
+    </div>
+
+    <div class="card">
+      <h3>Vagas mapeadas por mês</h3>
+      <div id="month-compare" class="month-compare"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="explorador">
+  <div class="wrap">
+    <div class="block-head">
+      <div class="block-kicker">Seção 04</div>
+      <h2>Explorador de vagas</h2>
+      <p>As vagas mapeadas, com link direto para a publicação original. Filtre por mês, setor, modalidade ou senioridade, ou busque por empresa e cargo.</p>
+    </div>
+
+    <div class="filters">
+      <select id="f-mes"></select>
+      <select id="f-setor"></select>
+      <select id="f-modalidade"></select>
+      <select id="f-senioridade"></select>
+      <input type="text" id="f-busca" placeholder="Buscar empresa ou cargo…">
+      <button class="reset" id="f-reset">Limpar filtros</button>
+      <span class="count nowrap" id="explorer-count"></span>
+    </div>
+
+    <div id="explorer-list"></div>
+  </div>
+</section>
+
+<section class="block" id="newsletter" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="newsletter">
+      <div class="decor-blob decor-blob--nl" aria-hidden="true"><svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blobGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4CC9F0"/>
+      <stop offset="0.55" stop-color="#B5179E"/>
+      <stop offset="1" stop-color="#7209B7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="205" cy="55" r="170" fill="none" stroke="#EAD6E5" stroke-width="1"/>
+  <circle cx="205" cy="55" r="120" fill="none" stroke="#EAD6E5" stroke-width="1"/>
+  <circle cx="205" cy="55" r="72" fill="none" stroke="#EAD6E5" stroke-width="1"/>
+  <path d="M178.0,82.0 Q186.1,103.9 208.0,112.0 Q186.1,120.1 178.0,142.0 Q169.9,120.1 148.0,112.0 Q169.9,103.9 178.0,82.0 Z" fill="url(#blobGrad)" opacity="0.92"/>
+  <circle cx="222" cy="168" r="4" fill="#4CC9F0" opacity="0.6"/>
+</svg></div>
+      <div class="nl-text">
+        <div class="nl-kicker">Newsletter mensal</div>
+        <img class="nl-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAEACAYAAAByEdxEAACahklEQVR4nOzdd3QUVRsG8GfSeyMJBAKEJPTeO9KrdAUUqQIWEBuggooKqGBDQKX33lHpvfcOgSSkkATSe8+W+f7A8KVski2z2U3y/M7xSGZn33tndufu7Lu3CGK6HERERERERERERETlkYmhK0BERERERERERESkL0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnFBCgRERERERERERGVW0yAEhERERERERERUbnF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" alt="Yaankha, me ajuda! — dados de inovação, inteligência para a sua carreira">
+        <p>Newsletter mensal que traduz dados reais do mercado de inovação brasileiro em direção prática de carreira.</p>
+      </div>
+      <a class="nl-btn" href="https://yaankhabharbara.substack.com/" target="_blank" rel="noopener noreferrer">Assinar a newsletter ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="credit">
+      Desenvolvido por <a href="https://www.linkedin.com/in/yaankha/" target="_blank" rel="noopener noreferrer">Yaankha Bharbara</a> · <span id="year-now"></span> · Painel vivo, atualizado ao longo de 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+
+const DATA = {"meta": {"total_vagas": 73, "meses": {"Julho": 45, "Agosto": 28}, "gerado_em": "2026-08-17"}, "title_keywords": [{"word": "inovação", "count": 61}, {"word": "analista", "count": 39}, {"word": "especialista", "count": 8}, {"word": "projetos", "count": 6}, {"word": "consultor", "count": 6}, {"word": "estratégia", "count": 5}, {"word": "gerente", "count": 5}, {"word": "pesquisa", "count": 4}, {"word": "pleno", "count": 4}, {"word": "sênior", "count": 4}, {"word": "desenvolvimento", "count": 4}, {"word": "negócios", "count": 4}, {"word": "aberta", "count": 3}, {"word": "senior", "count": 3}, {"word": "coordenador", "count": 3}, {"word": "parcerias", "count": 2}, {"word": "fomento", "count": 2}, {"word": "mercado", "count": 2}, {"word": "consultores", "count": 2}, {"word": "bolsista", "count": 2}, {"word": "startups", "count": 2}, {"word": "innovation", "count": 2}, {"word": "ventures", "count": 2}, {"word": "ecossistema", "count": 2}, {"word": "assistente", "count": 2}, {"word": "júnior", "count": 2}, {"word": "head", "count": 2}, {"word": "gestora", "count": 1}, {"word": "rede", "count": 1}, {"word": "financiamento", "count": 1}], "desc_keywords": [{"word": "inovação", "count": 71, "pct": 97.3}, {"word": "gestão", "count": 63, "pct": 86.3}, {"word": "projetos", "count": 62, "pct": 84.9}, {"word": "experiência", "count": 57, "pct": 78.1}, {"word": "conhecimento", "count": 50, "pct": 68.5}, {"word": "desenvolvimento", "count": 47, "pct": 64.4}, {"word": "iniciativas", "count": 44, "pct": 60.3}, {"word": "processos", "count": 44, "pct": 60.3}, {"word": "apoiar", "count": 42, "pct": 57.5}, {"word": "resultados", "count": 41, "pct": 56.2}, {"word": "inglês", "count": 40, "pct": 54.8}, {"word": "indicadores", "count": 40, "pct": 54.8}, {"word": "correlatas", "count": 40, "pct": 54.8}, {"word": "comunicação", "count": 39, "pct": 53.4}, {"word": "metodologias", "count": 39, "pct": 53.4}, {"word": "superior", "count": 39, "pct": 53.4}, {"word": "soluções", "count": 39, "pct": 53.4}, {"word": "negócio", "count": 39, "pct": 53.4}, {"word": "organização", "count": 36, "pct": 49.3}, {"word": "execução", "count": 36, "pct": 49.3}, {"word": "ferramentas", "count": 36, "pct": 49.3}, {"word": "capacidade", "count": 35, "pct": 47.9}, {"word": "startups", "count": 35, "pct": 47.9}, {"word": "administração", "count": 35, "pct": 47.9}, {"word": "vivência", "count": 34, "pct": 46.6}, {"word": "acompanhar", "count": 34, "pct": 46.6}, {"word": "dados", "count": 34, "pct": 46.6}, {"word": "parceiros", "count": 33, "pct": 45.2}, {"word": "conduzir", "count": 33, "pct": 45.2}, {"word": "avançado", "count": 33, "pct": 45.2}, {"word": "engenharia", "count": 33, "pct": 45.2}, {"word": "desenvolver", "count": 32, "pct": 43.8}, {"word": "tecnologia", "count": 32, "pct": 43.8}, {"word": "análise", "count": 32, "pct": 43.8}, {"word": "acompanhamento", "count": 31, "pct": 42.5}, {"word": "completo", "count": 31, "pct": 42.5}, {"word": "aberta", "count": 31, "pct": 42.5}, {"word": "negócios", "count": 31, "pct": 42.5}, {"word": "mercado", "count": 30, "pct": 41.1}, {"word": "estratégicos", "count": 30, "pct": 41.1}, {"word": "novas", "count": 29, "pct": 39.7}, {"word": "tecnologias", "count": 29, "pct": 39.7}, {"word": "ágeis", "count": 29, "pct": 39.7}, {"word": "apresentações", "count": 28, "pct": 38.4}, {"word": "elaborar", "count": 28, "pct": 38.4}, {"word": "estratégicas", "count": 28, "pct": 38.4}, {"word": "relatórios", "count": 28, "pct": 38.4}, {"word": "ecossistema", "count": 27, "pct": 37.0}, {"word": "diferentes", "count": 26, "pct": 35.6}, {"word": "garantindo", "count": 26, "pct": 35.6}, {"word": "pesquisa", "count": 26, "pct": 35.6}, {"word": "realizar", "count": 26, "pct": 35.6}, {"word": "qualidade", "count": 26, "pct": 35.6}, {"word": "atividades", "count": 26, "pct": 35.6}, {"word": "ensino", "count": 26, "pct": 35.6}, {"word": "produtos", "count": 26, "pct": 35.6}, {"word": "análises", "count": 26, "pct": 35.6}, {"word": "tendências", "count": 26, "pct": 35.6}, {"word": "garantir", "count": 26, "pct": 35.6}, {"word": "stakeholders", "count": 26, "pct": 35.6}], "taxonomy": [{"label": "KPI / Indicadores", "count": 42, "pct": 57.5, "categoria": "Ferramentas & métodos"}, {"label": "Gestão de projetos", "count": 40, "pct": 54.8, "categoria": "Ferramentas & métodos"}, {"label": "Inglês (qualquer nível)", "count": 40, "pct": 54.8, "categoria": "Formação & idiomas"}, {"label": "Comunicação", "count": 39, "pct": 53.4, "categoria": "Comportamentais"}, {"label": "Startups", "count": 37, "pct": 50.7, "categoria": "Ecossistema & fomento"}, {"label": "Ensino superior completo", "count": 33, "pct": 45.2, "categoria": "Formação & idiomas"}, {"label": "Ecossistema de inovação", "count": 32, "pct": 43.8, "categoria": "Ecossistema & fomento"}, {"label": "Metodologias ágeis", "count": 30, "pct": 41.1, "categoria": "Ferramentas & métodos"}, {"label": "Inovação aberta", "count": 27, "pct": 37.0, "categoria": "Ecossistema & fomento"}, {"label": "Gestão de portfólio", "count": 24, "pct": 32.9, "categoria": "Ferramentas & métodos"}, {"label": "Excel", "count": 22, "pct": 30.1, "categoria": "Ferramentas & métodos"}, {"label": "Pensamento crítico / analítico", "count": 22, "pct": 30.1, "categoria": "Comportamentais"}, {"label": "Liderança", "count": 20, "pct": 27.4, "categoria": "Comportamentais"}, {"label": "Trabalho em equipe / colaboração", "count": 20, "pct": 27.4, "categoria": "Comportamentais"}, {"label": "Design Thinking", "count": 17, "pct": 23.3, "categoria": "Ferramentas & métodos"}, {"label": "Lean / Lean Startup", "count": 17, "pct": 23.3, "categoria": "Ferramentas & métodos"}, {"label": "Pós-graduação", "count": 17, "pct": 23.3, "categoria": "Formação & idiomas"}, {"label": "Prospecção de startups / scouting", "count": 17, "pct": 23.3, "categoria": "Ecossistema & fomento"}, {"label": "Diversidade / inclusão / PCD", "count": 16, "pct": 21.9, "categoria": "Comportamentais"}, {"label": "Inglês avançado", "count": 14, "pct": 19.2, "categoria": "Formação & idiomas"}, {"label": "Proatividade", "count": 14, "pct": 19.2, "categoria": "Comportamentais"}, {"label": "Hub / Parque tecnológico / Incubadora / Aceleradora", "count": 13, "pct": 17.8, "categoria": "Ecossistema & fomento"}, {"label": "MBA", "count": 11, "pct": 15.1, "categoria": "Formação & idiomas"}, {"label": "Autonomia", "count": 10, "pct": 13.7, "categoria": "Comportamentais"}, {"label": "PD&I / P&D", "count": 10, "pct": 13.7, "categoria": "Ecossistema & fomento"}, {"label": "Power BI", "count": 9, "pct": 12.3, "categoria": "Ferramentas & métodos"}, {"label": "Visão estratégica", "count": 9, "pct": 12.3, "categoria": "Comportamentais"}, {"label": "Scrum", "count": 8, "pct": 11.0, "categoria": "Ferramentas & métodos"}, {"label": "Inglês fluente", "count": 8, "pct": 11.0, "categoria": "Formação & idiomas"}, {"label": "Criatividade", "count": 8, "pct": 11.0, "categoria": "Comportamentais"}, {"label": "Canvas", "count": 7, "pct": 9.6, "categoria": "Ferramentas & métodos"}, {"label": "Kanban", "count": 7, "pct": 9.6, "categoria": "Ferramentas & métodos"}, {"label": "Apresentações / storytelling", "count": 7, "pct": 9.6, "categoria": "Comportamentais"}, {"label": "OKR", "count": 6, "pct": 8.2, "categoria": "Ferramentas & métodos"}, {"label": "Negociação", "count": 6, "pct": 8.2, "categoria": "Comportamentais"}, {"label": "FINEP", "count": 6, "pct": 8.2, "categoria": "Ecossistema & fomento"}, {"label": "Editais / chamadas públicas", "count": 6, "pct": 8.2, "categoria": "Ecossistema & fomento"}, {"label": "Corporate Venture Capital / CVC", "count": 6, "pct": 8.2, "categoria": "Ecossistema & fomento"}, {"label": "Benchmarking", "count": 6, "pct": 8.2, "categoria": "Ecossistema & fomento"}, {"label": "Mestrado", "count": 5, "pct": 6.8, "categoria": "Formação & idiomas"}, {"label": "Resiliência", "count": 5, "pct": 6.8, "categoria": "Comportamentais"}, {"label": "Adaptabilidade / flexibilidade", "count": 5, "pct": 6.8, "categoria": "Comportamentais"}, {"label": "Design Sprint", "count": 4, "pct": 5.5, "categoria": "Ferramentas & métodos"}, {"label": "PMO", "count": 4, "pct": 5.5, "categoria": "Ferramentas & métodos"}, {"label": "Gestão de parcerias", "count": 4, "pct": 5.5, "categoria": "Ferramentas & métodos"}, {"label": "Propriedade intelectual / patentes", "count": 4, "pct": 5.5, "categoria": "Ecossistema & fomento"}, {"label": "PMI / PMP", "count": 3, "pct": 4.1, "categoria": "Ferramentas & métodos"}, {"label": "Jira", "count": 3, "pct": 4.1, "categoria": "Ferramentas & métodos"}, {"label": "Miro", "count": 3, "pct": 4.1, "categoria": "Ferramentas & métodos"}, {"label": "Espanhol", "count": 3, "pct": 4.1, "categoria": "Formação & idiomas"}, {"label": "Doutorado", "count": 3, "pct": 4.1, "categoria": "Formação & idiomas"}, {"label": "FAPEMIG", "count": 2, "pct": 2.7, "categoria": "Ecossistema & fomento"}, {"label": "CNPq", "count": 2, "pct": 2.7, "categoria": "Ecossistema & fomento"}, {"label": "BNDES", "count": 2, "pct": 2.7, "categoria": "Ecossistema & fomento"}, {"label": "SEBRAE", "count": 2, "pct": 2.7, "categoria": "Ecossistema & fomento"}, {"label": "Due diligence", "count": 2, "pct": 2.7, "categoria": "Ecossistema & fomento"}, {"label": "Hackathon", "count": 2, "pct": 2.7, "categoria": "Ecossistema & fomento"}, {"label": "MVP", "count": 1, "pct": 1.4, "categoria": "Ferramentas & métodos"}, {"label": "CB Insights", "count": 1, "pct": 1.4, "categoria": "Ferramentas & métodos"}, {"label": "FAPESP", "count": 1, "pct": 1.4, "categoria": "Ecossistema & fomento"}, {"label": "CAPES", "count": 1, "pct": 1.4, "categoria": "Ecossistema & fomento"}, {"label": "Lei do Bem", "count": 1, "pct": 1.4, "categoria": "Ecossistema & fomento"}, {"label": "Deep tech", "count": 1, "pct": 1.4, "categoria": "Ecossistema & fomento"}, {"label": "Mentoria", "count": 1, "pct": 1.4, "categoria": "Ecossistema & fomento"}], "headers": {"Requisitos e qualificações": 32, "Responsabilidades e atribuições": 31, "O que você vai fazer / dia a dia": 5, "Diferencial / desejável": 29, "Sobre a empresa / instituição": 9, "Jobs to be done": 2, "Benefícios": 5}, "other_patterns": {"Estímulo à candidatura mesmo sem 100% dos requisitos": 2, "Disponibilidade para viagens": 13, "Menção a PCD": 4, "Graduação em andamento aceita": 3, "Uso de emojis para estruturar a descrição": 14}, "desc_len": {"media": 372.35616438356163, "min": 105, "max": 803}, "panorama": {"setor": [["Saúde e Farmacêutico", 16], ["Ecossistema de Inovação e Venture Capital", 15], ["Financeiro e Seguros", 6], ["Energia, Óleo e Gás", 5], ["Tecnologia da Informação", 5], ["Logística e Transporte", 5], ["Consultoria e Serviços Profissionais", 4], ["Agro e Alimentos", 4], ["Construção Civil e Imobiliário", 2], ["Varejo e Bens de Consumo", 2], ["Outro", 2], ["Indústria e Manufatura", 2], ["Educação", 1], ["Telecomunicações", 1], ["Meio Ambiente e Saneamento", 1], ["Automotivo e Mobilidade", 1], ["Setor Público e Defesa", 1]], "modalidade": [["Presencial", 33], ["Híbrido", 28], ["Remoto", 7], ["-", 3], ["Não informado", 2]], "senioridade": [["Não especificado", 17], ["Sênior", 12], ["Especialista", 8], ["Pleno", 7], ["Consultor(a)", 7], ["Júnior", 6], ["Gerência", 5], ["Coordenação", 3], ["Assistente / Auxiliar", 3], ["Bolsista / Trainee / Estágio", 2], ["Head", 2], ["Supervisão", 1]], "familia": [["Analista", 39], ["Especialista", 8], ["Consultor(a)", 8], ["Gerente", 5], ["Outro", 3], ["Coordenador(a)", 3], ["Assistente / Auxiliar", 3], ["Head", 2], ["Supervisor(a)", 1], ["Bolsista / Trainee", 1]], "empresas": [["IEBT Innovation", 4], ["Deloitte", 3], ["Einstein Hospital Israelita", 3], ["Kunumi", 2], ["Porto Digital", 2], ["Hypera", 2], ["PIT - Parque de Inovação Tecnológica São José dos Campos", 2], ["Libbs Farmacêutica", 1], ["Laboratório IBASA", 1], ["Banco Daycoval", 1], ["Afya", 1], ["EDP Brasil", 1], ["FCamara", 1], ["Brasilseg", 1], ["Unimed do Brasil", 1], ["Vigor", 1], ["Neo Ventures", 1], ["Inova, Laboratório de Inovação do MPRJ", 1], ["Grupo CSC", 1], ["Sírio-Libanês", 1], ["Grupo EPR", 1], ["Serasa Experian", 1], ["PRIO", 1], ["Grupo Patrimar", 1], ["Myralis", 1], ["Fundação Butantan", 1], ["DHL Supply Chain", 1], ["Globalsat Brasil", 1], ["Grendene", 1], ["CRESOL", 1], ["Tahto", 1], ["Dasa", 1], ["Orizon", 1], ["Foursys", 1], ["Jobbol", 1], ["Marcopolo S.A.", 1], ["GRUPO NC", 1], ["AB InBev", 1], ["CTCEA - Org. Brasileira para o Desenvolvimento Científico e Tecnológico do Controle do Espaço Aéreo", 1], ["Grupo Skill", 1], ["ACE Ventures", 1], ["Accenture Brasil", 1], ["i4Pro", 1], ["Grupo Rodonaves", 1], ["Construtora Tenda", 1], ["Auren Energia", 1], ["CIALNE ", 1], ["GrupoSC", 1], ["Timenow", 1], ["Seguros Unimed", 1], ["Grupo Boticário", 1], ["Motz", 1], ["CPFL Energia", 1], ["IEL/SC - Instituto Euvaldo Lodi de Santa Catarina", 1], ["Odontoprev", 1], ["Consigaz", 1], ["FIESC - Federação das Indústrias do Estado de Santa Catarina", 1], ["Louis Dreyfus Company", 1], ["GrupoSC Distribuidora de Medicamentos", 1], ["bossa invest", 1], ["Sebrae Minas", 1], ["Hubiz - Parque Tecnológico de Sorocaba (PTS)", 1]], "meses": [["Julho", 45], ["Agosto", 28]], "setor_x_senioridade": {"Ecossistema de Inovação e Venture Capital": {"Não especificado": 4, "Bolsista / Trainee / Estágio": 1, "Especialista": 1, "Sênior": 3, "Coordenação": 1, "Consultor(a)": 3, "Júnior": 1, "Pleno": 1}, "Saúde e Farmacêutico": {"Pleno": 2, "Não especificado": 3, "Consultor(a)": 2, "Especialista": 2, "Júnior": 3, "Sênior": 4}, "Financeiro e Seguros": {"Especialista": 3, "Sênior": 1, "Gerência": 1, "Head": 1}, "Educação": {"Especialista": 1}, "Consultoria e Serviços Profissionais": {"Consultor(a)": 1, "Não especificado": 2, "Gerência": 1}, "Energia, Óleo e Gás": {"Sênior": 2, "Coordenação": 1, "Consultor(a)": 1, "Pleno": 1}, "Tecnologia da Informação": {"Pleno": 1, "Não especificado": 2, "Assistente / Auxiliar": 1, "Gerência": 1}, "Agro e Alimentos": {"Júnior": 1, "Não especificado": 2, "Sênior": 1}, "Logística e Transporte": {"Não especificado": 2, "Supervisão": 1, "Gerência": 1, "Head": 1}, "Construção Civil e Imobiliário": {"Júnior": 1, "Pleno": 1}, "Telecomunicações": {"Pleno": 1}, "Varejo e Bens de Consumo": {"Não especificado": 1, "Gerência": 1}, "Outro": {"Coordenação": 1, "Assistente / Auxiliar": 1}, "Meio Ambiente e Saneamento": {"Especialista": 1}, "Automotivo e Mobilidade": {"Assistente / Auxiliar": 1}, "Setor Público e Defesa": {"Não especificado": 1}, "Indústria e Manufatura": {"Bolsista / Trainee / Estágio": 1, "Sênior": 1}}, "modalidade_x_senioridade": {"Remoto": {"Não especificado": 2, "Pleno": 2, "Coordenação": 1, "Consultor(a)": 1, "Gerência": 1}, "Presencial": {"Não especificado": 8, "Especialista": 3, "Consultor(a)": 1, "Júnior": 5, "Bolsista / Trainee / Estágio": 2, "Sênior": 6, "Coordenação": 2, "Pleno": 2, "Gerência": 2, "Assistente / Auxiliar": 2}, "Híbrido": {"Especialista": 4, "Consultor(a)": 5, "Sênior": 5, "Pleno": 3, "Não especificado": 5, "Gerência": 2, "Head": 2, "Júnior": 1, "Assistente / Auxiliar": 1}, "-": {"Sênior": 1, "Supervisão": 1, "Não especificado": 1}, "Não informado": {"Especialista": 1, "Não especificado": 1}}}, "explorer": [{"mes": "Agosto", "empresa": "Auren Energia", "cargo": "Consultor de Inovação e P&D", "link": "https://aurenenergia.gupy.io/job/eyJqb2JJZCI6MTE2NTM5OTksInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Híbrido", "setor": "Energia, Óleo e Gás", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "Descrição da vaga Tudo o que fazemos só é possível com as pessoas no centro, por isso, somos comprometidos com a inclusão e valorizamos as diferentes formas de contribuir com a criação de um amanhã mais positivo. Queremo…"}, {"mes": "Agosto", "empresa": "bossa invest", "cargo": "Analista de Venture Capital | Startups & Investimentos", "link": "https://www.linkedin.com/jobs/view/4443015394/", "modalidade": "Híbrido", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Nível: Analista Cursos de: RI,direito,economia,engenharia Escolaridade: Graduação - RI,direito,economia,engenharia - Completo Tipo de contrato: PJ Jornada de trabalho: 40h semanais Benefícios: WellHub, Day Off Responsabi…"}, {"mes": "Agosto", "empresa": "CIALNE", "cargo": "ANALISTA DE PROJETOS (INOVAÇÃO)", "link": "https://cialne.gupy.io/job/eyJqb2JJZCI6MTE5ODY3MTYsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Presencial", "setor": "Agro e Alimentos", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Descrição da vaga Nosso propósito é produzir com amor para você, com foco em inovação tecnológica e no cuidado com nossa gente. Aqui, você terá a oportunidade de fazer parte de uma das maiores empresas do Norte, Nordeste…"}, {"mes": "Agosto", "empresa": "Consigaz", "cargo": "Analista de Inovação Pl.", "link": "https://www.linkedin.com/jobs/view/4444230722/", "modalidade": "Presencial", "setor": "Energia, Óleo e Gás", "senioridade": "Pleno", "familia": "Analista", "resumo": "Detalhes Da Posição Conduzir, acompanhar e desenvolver projetos de inovação, assegurando o cumprimento de escopo, cronograma e indicadores definidos. Elaborar e validar estudos de viabilidade técnica e econômica (incluin…"}, {"mes": "Agosto", "empresa": "Construtora Tenda", "cargo": "Analista de Inovação Pleno", "link": "https://tenda.gupy.io/job/eyJqb2JJZCI6MTE4ODI3NTMsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Híbrido", "setor": "Construção Civil e Imobiliário", "senioridade": "Pleno", "familia": "Analista", "resumo": "Responsabilidades e atribuições Acompanhar as cerimônias ágeis da squad (plannings, refinamentos, reviews e retrospectivas), contribuindo com visão de negócio e priorização, para garantir que o time mantenha o foco nos o…"}, {"mes": "Agosto", "empresa": "CPFL Energia", "cargo": "Analista de Inovação Sênior", "link": "https://www.linkedin.com/jobs/view/4445561013/", "modalidade": "Presencial", "setor": "Energia, Óleo e Gás", "senioridade": "Sênior", "familia": "Analista", "resumo": "Pré-Requisitos: Necessário Ensino Superior completo; Experiência sólida em Inovação Corporativa, Gestão da Inovação, Gestão de projetos de inovação, Estratégia ou áreas correlatas; Experiência na condução de iniciativas…"}, {"mes": "Agosto", "empresa": "Deloitte", "cargo": "Gerente – Innovation e Ventures | RJ, SP ou BH", "link": "https://www.linkedin.com/jobs/view/4454832167/", "modalidade": "Híbrido", "setor": "Consultoria e Serviços Profissionais", "senioridade": "Gerência", "familia": "Gerente", "resumo": "Você terá a oportunidade de evoluir sua carreira na maior organização de serviços profissionais do mundo atuando Gerente no time de Innovation & Ventures. Na sua rotina, você irá: Definir estratégia de inovação e desenvo…"}, {"mes": "Agosto", "empresa": "Einstein Hospital Israelita", "cargo": "Consultor (a) de Inovação- Centros Colaborativos de Inovação", "link": "https://www.linkedin.com/jobs/view/4451269313/", "modalidade": "Híbrido", "setor": "Saúde e Farmacêutico", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "Buscamos um(a) Consultor(a) de Inovação para atuar no desenvolvimento e gestão dos Centros Colaborativos de Inovação. Esta posição terá papel central na estruturação de parcerias de longo prazo, apoio na gestão da govern…"}, {"mes": "Agosto", "empresa": "FIESC - Federação das Indústrias do Estado de Santa Catarina", "cargo": "Gerente de Projetos de Inovação - Sênior", "link": "https://www.linkedin.com/jobs/view/4452197055/", "modalidade": "Presencial", "setor": "Indústria e Manufatura", "senioridade": "Sênior", "familia": "Gerente", "resumo": "SERVIÇO NACIONAL DE APRENDIZAGEM INDUSTRIAL - Instituto SENAI de Inovacao em Sistemas Embarcados Antes de realizar sua inscrição, leia com atenção as informações disponíveis no Comunicado de Processo Seletivo. ATENÇÃO: I…"}, {"mes": "Agosto", "empresa": "Grupo Boticário", "cargo": "Gerente Marca Inovação - Facial e Solar", "link": "https://www.linkedin.com/jobs/view/4452627356/", "modalidade": "Remoto", "setor": "Varejo e Bens de Consumo", "senioridade": "Gerência", "familia": "Gerente", "resumo": "Responsabilidades e atribuições Liderar o direcionamento e a construção do pipeline de inovação para as categorias de Facial e Solar, garantindo soluções potentes, diferenciadas e aderentes ao comportamento do consumidor…"}, {"mes": "Agosto", "empresa": "Grupo Rodonaves", "cargo": "GERENTE DE PROCESSOS E INOVAÇÃO", "link": "https://rodonaves.gupy.io/job/eyJqb2JJZCI6MTIwNDMxMTUsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Presencial", "setor": "Logística e Transporte", "senioridade": "Gerência", "familia": "Gerente", "resumo": "Responsabilidades e atribuições Missão do Cargo Gerenciar as áreas de Processos, Implementação e Inovação, promovendo a melhoria contínua, a padronização e a evolução dos processos corporativos e operacionais. Liderar in…"}, {"mes": "Agosto", "empresa": "GrupoSC", "cargo": "Analista de Inovação SR.", "link": "https://gruposc.gupy.io/job/eyJqb2JJZCI6MTIwNzQyNDAsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Sênior", "familia": "Analista", "resumo": "Descrição da vaga Buscamos pessoas que nos ajudem a cumprir o nosso propósito de mais saúde para mais pessoas. Se você é um profissional pró ativo, flexível a mudanças e disposto a se comprometer com a busca pela melhori…"}, {"mes": "Agosto", "empresa": "GrupoSC Distribuidora de Medicamentos", "cargo": "Analista de Inovação SR.", "link": "https://www.linkedin.com/jobs/view/4454098319/", "modalidade": "Híbrido", "setor": "Saúde e Farmacêutico", "senioridade": "Sênior", "familia": "Analista", "resumo": "Responsabilidades e atribuições Prospectar, pesquisar e avaliar novas tecnologias aplicáveis aos processos logísticos e intralogísticos. Liderar estudos técnicos e análises de viabilidade para identificação de oportunida…"}, {"mes": "Agosto", "empresa": "Hubiz - Parque Tecnológico de Sorocaba (PTS)", "cargo": "Analista de Incubação Sênior", "link": "https://www.linkedin.com/posts/hubiz-oportunidade-analista-de-incuba%C3%A7%C3%A3o-ugcPost-7493025474307223552-wqrw/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB-svuYBSjRTqjBky6-15lx6z_-9X4VvJWQ", "modalidade": "Presencial", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Sênior", "familia": "Analista", "resumo": "A posição terá como foco o acompanhamento da jornada das startups incubadas, a aplicação e disseminação da metodologia Hubiz, a realização de workshops e eventos de inovação, a gestão de dados e indicadores e a melhoria…"}, {"mes": "Agosto", "empresa": "Hypera", "cargo": "Analista de Inovação Júnior", "link": "https://www.linkedin.com/jobs/view/4436643379/", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Júnior", "familia": "Analista", "resumo": "Responsabilidades e atribuições Apoiará no desenvolvimento de planos de negócio para projetos de inovação, realizando análises de mercado, estudos de viabilidade, projeções, precificação e posicionamento estratégico. Dar…"}, {"mes": "Agosto", "empresa": "i4Pro", "cargo": "Head de Inovação e Produtos Digitais", "link": "https://i4pro.gupy.io/job/eyJqb2JJZCI6MTE5NzU5MTksInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Híbrido", "setor": "Financeiro e Seguros", "senioridade": "Head", "familia": "Head", "resumo": "/ Sobre o desafio Trata-se de uma posição executiva de alta relevância, responsável por definir a visão, estratégia e evolução do portfólio de produtos digitais da i4Pro. O(a) profissional atuará em estreita parceria com…"}, {"mes": "Agosto", "empresa": "IEBT Innovation", "cargo": "Analista de Inovação Pleno", "link": "https://www.linkedin.com/jobs/view/4453269830/", "modalidade": "Remoto", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Pleno", "familia": "Analista", "resumo": "Estamos em busca de um(a) Analista de Inovação para atuar na gestão e acompanhamento operacional e estratégico de projetos de aceleração de startups (soft techs e deep techs) em parceria com grandes corporações. A pessoa…"}, {"mes": "Agosto", "empresa": "IEBT Innovation", "cargo": "Consultor de Inovação Aberta", "link": "https://www.linkedin.com/jobs/view/4448910133/", "modalidade": "Híbrido", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "O profissional selecionado irá atuar na gestão e execução de projetos inovação aberta, com foco etapas de POC, Piloto e Deployment, além de conduzir workshops e capacitação a startups e time interno do cliente. Responsab…"}, {"mes": "Agosto", "empresa": "IEBT Innovation", "cargo": "Consultor(a) em Inovação", "link": "https://www.linkedin.com/jobs/view/4453006916/", "modalidade": "Remoto", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "Sobre a vaga Estamos em busca de um(a) Analista de Inovação para atuar em um projeto de inovação aberta, tendo como principais atribuições garantir o andamento estruturado das atividades dos projetos executados com outra…"}, {"mes": "Agosto", "empresa": "IEL/SC - Instituto Euvaldo Lodi de Santa Catarina", "cargo": "SENAI - Bolsista de Empreendedorismo e Inovação Aberta em New Space, IA e Geointeligência", "link": "https://www.linkedin.com/jobs/view/4450805470/", "modalidade": "Presencial", "setor": "Indústria e Manufatura", "senioridade": "Bolsista / Trainee / Estágio", "familia": "Bolsista / Trainee", "resumo": "🚀 PROGRAMA INOVA TALENTOS | O FUTURO DA INOVAÇÃO COMEÇA AQUI! 🚀 Se você é um profissional apaixonado por inovação e tecnologia, chegou a hora de impulsionar sua carreira! O Inova Talentos conecta mentes brilhantes a proj…"}, {"mes": "Agosto", "empresa": "Louis Dreyfus Company", "cargo": "ANALISTA PESQUISA DESENVOLVIMENTO E INOVAÇÃO SENIOR", "link": "https://www.linkedin.com/jobs/view/4431511765/", "modalidade": "Presencial", "setor": "Agro e Alimentos", "senioridade": "Sênior", "familia": "Analista", "resumo": "Descrição da vaga Planejar e realizar testes de desenvolvimento de novos produtos e elaboração de relatórios detalhados Avaliar estratégias, desenvolver protocolos e viabilizar junto aos demais times industrias teste pil…"}, {"mes": "Agosto", "empresa": "Motz", "cargo": "Head de Produto e Inovação", "link": "https://www.linkedin.com/jobs/view/4448474763/", "modalidade": "Híbrido", "setor": "Logística e Transporte", "senioridade": "Head", "familia": "Head", "resumo": "Responsabilidades e atribuições Liderar a evolução estratégica da plataforma da companhia e o desenvolvimento de novas avenidas de crescimento, conectando produto, tecnologia, operação e estratégia de negócio. A posição…"}, {"mes": "Agosto", "empresa": "Odontoprev", "cargo": "ANALISTA DE INOVAÇÃO III", "link": "https://www.linkedin.com/jobs/view/4445558257/", "modalidade": "Híbrido", "setor": "Saúde e Farmacêutico", "senioridade": "Sênior", "familia": "Analista", "resumo": "Atuar na área de inovação com foco em Novos Modelos de Negócios: conduzir a jornada de inovação voltada à identificação, priorização, experimentação rápida e validação de novos modelos de negócio na área de odontologia p…"}, {"mes": "Agosto", "empresa": "PIT - Parque de Inovação Tecnológica São José dos Campos", "cargo": "Analista Jr de Estratégia e Inovação", "link": "", "modalidade": "Híbrido", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Júnior", "familia": "Analista", "resumo": "Descrição da vaga Estamos em busca de uma pessoa para integrar o time de Estratégia e Inovação da APTSJC, atuando diretamente em projetos voltados ao desenvolvimento do empreendedorismo, da inovação e do ecossistema do a…"}, {"mes": "Agosto", "empresa": "PIT - Parque de Inovação Tecnológica São José dos Campos", "cargo": "Analista Senior de Ecossistemas de Inovação", "link": "https://pitsjc.gupy.io/job/eyJqb2JJZCI6MTE5NzAwOTAsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Híbrido", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Sênior", "familia": "Analista", "resumo": "Responsabilidades e atribuições - Organizar e conduzir kick off externo com o cliente; - Detalhar cronograma alinhado às expectativas do cliente e alimentar sistema de gestão à vista da execução do projeto; - Planejar co…"}, {"mes": "Agosto", "empresa": "Sebrae Minas", "cargo": "ALI Ecossistema – SEBRAE Minas", "link": "https://www.linkedin.com/posts/alisebrae-inovaaexaeto-ecossistemasdeinovaaexaeto-share-7485746478905290754-zzPP/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB-svuYBSjRTqjBky6-15lx6z_-9X4VvJWQ", "modalidade": "Presencial", "setor": "Consultoria e Serviços Profissionais", "senioridade": "Não especificado", "familia": "Outro", "resumo": "ALI Ecossistema: Bolsas de Inovação Territorial (BIT), cujo objetivo é ativar a inovação no território, como forma de articular, integrar e dinamizar os atores de inovação, contribuindo para a promoção do desenvolvimento…"}, {"mes": "Agosto", "empresa": "Seguros Unimed", "cargo": "Especialista de Inovação", "link": "https://www.linkedin.com/jobs/view/4441046714/", "modalidade": "Híbrido", "setor": "Financeiro e Seguros", "senioridade": "Especialista", "familia": "Especialista", "resumo": "No seu dia-a-dia: Apoio na Definição da Estratégia do CVB Studio e Definição de Teses; Criar, implementar e garantir a operacionalização do framework de construção de novos negócios (CVB Clássico e/ou Open CVB) da compan…"}, {"mes": "Agosto", "empresa": "Timenow", "cargo": "Pessoa Assistente de Inovação", "link": "https://time-now.gupy.io/job/eyJqb2JJZCI6MTIwNDYzMjMsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Híbrido", "setor": "Outro", "senioridade": "Assistente / Auxiliar", "familia": "Assistente / Auxiliar", "resumo": "Responsabilidades e atribuições Descrição sumária: Buscamos uma pessoa para atuar com Inovação, sendo responsável por executar ações integradas de cultura de inovação, parcerias com o ecossistema, captação de recursos, p…"}, {"mes": "Julho", "empresa": "AB InBev", "cargo": "Analista de Insights – Inovação Global (Balanced Choices)", "link": "https://www.linkedin.com/jobs/view/4432702723/", "modalidade": "-", "setor": "Agro e Alimentos", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Analista de Insights – Inovação Global (Balanced Choices) Faça parte do futuro da inovação em bebidas. Estamos em busca de um(a) Analista de Insights com forte perfil analítico e paixão por pesquisa para integrar nosso t…"}, {"mes": "Julho", "empresa": "Accenture Brasil", "cargo": "Accenture Strategy | Consultores e Gerentes de Estratégia", "link": "https://www.linkedin.com/jobs/view/4371314260/", "modalidade": "Híbrido", "setor": "Tecnologia da Informação", "senioridade": "Gerência", "familia": "Consultor(a)", "resumo": "Um time que faz parte da mudança Abraçamos o poder da mudança para criar valor e sucesso compartilhado para nossos clientes, funcionários, acionistas, parceiros e comunidades. Contamos com a maior rede mundial de centros…"}, {"mes": "Julho", "empresa": "ACE Ventures", "cargo": "Consultor de Estratégia e Expansão de Negócios", "link": "https://www.linkedin.com/jobs/view/4361993551/", "modalidade": "Híbrido", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "Essa oportunidade é para ACE Cortex e faz parte da holding ACE Ventures! A ACE Cortex é uma consultoria de negócios que desenvolve soluções personalizadas para cada cliente, com um modelo de trabalho em parceria desde a…"}, {"mes": "Julho", "empresa": "Afya", "cargo": "Especialista em Pesquisa e Inovação", "link": "https://www.linkedin.com/jobs/view/4418327782", "modalidade": "Híbrido", "setor": "Educação", "senioridade": "Especialista", "familia": "Especialista", "resumo": "Somos aliados do médico durante toda a sua jornada e buscamos por pessoas que se identifiquem com nosso propósito, valores e cultura para se juntarem ao nosso time. Vamos juntos transformar a saúde com quem tem a medicin…"}, {"mes": "Julho", "empresa": "Banco Daycoval", "cargo": "Especialista de Transformação, Inovação e Estratégia", "link": "https://www.linkedin.com/jobs/view/4428502000", "modalidade": "Presencial", "setor": "Financeiro e Seguros", "senioridade": "Especialista", "familia": "Especialista", "resumo": "O Daycoval Investe é a plataforma de investimentos do Banco Daycoval, dedicada a oferecer soluções financeiras alinhadas aos diferentes perfis de investidores. Com um portfólio diversificado de produtos, atendimento cons…"}, {"mes": "Julho", "empresa": "Brasilseg", "cargo": "Analista de Inovação Sênior", "link": "https://www.linkedin.com/jobs/view/4419696327", "modalidade": "Híbrido", "setor": "Financeiro e Seguros", "senioridade": "Sênior", "familia": "Analista", "resumo": "Atuar no time de Inovação da Brasilseg, liderando iniciativas de produtos digitais e projetos inovadores, com foco em geração de valor ao cliente e ao negócio. Responsável por definir, priorizar e evoluir soluções digita…"}, {"mes": "Julho", "empresa": "CRESOL", "cargo": "Gerente de Negócios Agro | Cresol Inovação | Agência Bom Jesus do Oeste (SC)", "link": "https://cresolcarreiras.gupy.io/job/eyJqb2JJZCI6MTE3NzkyODgsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Presencial", "setor": "Financeiro e Seguros", "senioridade": "Gerência", "familia": "Gerente", "resumo": "Descrição da vaga Venha fazer a diferença com a gente! 🧡 Estamos em busca de um(a) Gerente de Negócios Agro para fortalecer ainda mais o nosso time! Se você acredita no poder do trabalho em equipe, na construção de um am…"}, {"mes": "Julho", "empresa": "CTCEA - Org. Brasileira para o Desenvolvimento Científico e Tecnológico do Controle do Espaço Aéreo", "cargo": "Analista de Desenvolvimento de Negócios", "link": "https://www.linkedin.com/jobs/view/4429790889/", "modalidade": "Não informado", "setor": "Setor Público e Defesa", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Principais Tarefas do Cargo: Prospectar novas oportunidades de serviços, produtos, parcerias e projetos, alinhadas às finalidades estatutárias da CTCEA. Realizar estudos preliminares de viabilidade técnica, institucional…"}, {"mes": "Julho", "empresa": "Dasa", "cargo": "Analista Pesquisa Inovação", "link": "https://dasacorp.gupy.io/job/eyJqb2JJZCI6MTE3MTAwNjMsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Híbrido", "setor": "Saúde e Farmacêutico", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Descrição da vaga Somos a Dasa, a maior rede de saúde integrada do Brasil. Somos apaixonados(as) por pessoas e conquistamos os melhores resultados com gente boa, que trabalha junto. Em nossa área corporativa, você encont…"}, {"mes": "Julho", "empresa": "Deloitte", "cargo": "Analista de Projetos | Innovation & Ventures", "link": "https://www.linkedin.com/jobs/view/4441906078/", "modalidade": "Híbrido", "setor": "Consultoria e Serviços Profissionais", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Você terá a oportunidade de evoluir sua carreira na maior organização de serviços profissionais do mundo atuando Analista no time de Innovation & Ventures. Na sua rotina, você irá: Desenvolver pesquisas de mercado, tendê…"}, {"mes": "Julho", "empresa": "Deloitte", "cargo": "Programa Consultores de Impacto", "link": "https://www.linkedin.com/jobs/view/4411674546", "modalidade": "Híbrido", "setor": "Consultoria e Serviços Profissionais", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "Estamos buscando Consultores(as) para atuar de forma estratégica na construção e evolução de processos que impactam diretamente a experiência dos nossos clientes. Essa posição é ideal para profissionais que gostam de com…"}, {"mes": "Julho", "empresa": "DHL Supply Chain", "cargo": "SUPERVISOR(A) DE INOVAÇÃO", "link": "https://www.linkedin.com/jobs/view/4442256940/", "modalidade": "-", "setor": "Logística e Transporte", "senioridade": "Supervisão", "familia": "Supervisor(a)", "resumo": "Descrição da vaga: Esta vaga também é inclusiva para PCDs. Será responsável por liderar iniciativas de inovação e digitalização que integrem soluções baseadas em dados, robótica e automação, alinhadas aos objetivos estra…"}, {"mes": "Julho", "empresa": "EDP Brasil", "cargo": "Analista de Estratégia, Inovação e Organização Sr", "link": "https://www.linkedin.com/jobs/view/4430974288", "modalidade": "Híbrido", "setor": "Energia, Óleo e Gás", "senioridade": "Sênior", "familia": "Analista", "resumo": "Nossa empresa faz parte da EDP, um grupo energético global presente em cerca de 30 mercados, com ênfase particular nas energias renováveis. Com mais de 45 anos de experiência, temos consolidado uma presença relevante no…"}, {"mes": "Julho", "empresa": "Einstein Hospital Israelita", "cargo": "Analista de Inovação (PMO)", "link": "https://www.linkedin.com/jobs/view/4441083239/", "modalidade": "Híbrido", "setor": "Saúde e Farmacêutico", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Sobre a vaga Com 70 anos de existência, o Einstein Hospital Israelita ainda mantém uma premissa: inovar e crescer, sempre com excelência. Ajudamos a salvar vidas, difundir o conhecimento em educação, prevenção e inovação…"}, {"mes": "Julho", "empresa": "Einstein Hospital Israelita", "cargo": "Consultor (a) de Inovação com foco em Growth", "link": "https://www.linkedin.com/jobs/view/4428933602", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Consultor(a)", "familia": "Consultor(a)", "resumo": "Dados da vaga: Unidade: Centro de Ensino e Pesquisa (CEP) - Morumbi Área: Escala Diretoria: Inovação Carga Horária: 220H Escala: Seg a Sex Atribuições: Desenvolver e executar estratégias de Growth com foco em geração de…"}, {"mes": "Julho", "empresa": "FCamara", "cargo": "Analista de Inovação - Pleno", "link": "https://www.linkedin.com/jobs/view/4419109223", "modalidade": "Híbrido", "setor": "Tecnologia da Informação", "senioridade": "Pleno", "familia": "Analista", "resumo": "Estamos em busca de uma pessoa Analista de Inovação Pleno para atuar em uma grande empresa do segmento de saúde, apoiando duas frentes estratégicas: Inovação Aberta e Novos Negócios. A posição terá atuação conectando o e…"}, {"mes": "Julho", "empresa": "Foursys", "cargo": "Lead de Ecossistema & Parcerias/ Mercado de Tecnologia", "link": "https://www.linkedin.com/jobs/view/4436106167/", "modalidade": "Híbrido", "setor": "Tecnologia da Informação", "senioridade": "Não especificado", "familia": "Outro", "resumo": "Sobre a vaga A Foursys é um time apaixonado por inovação, design e transformação digital. Somos globais, somos GPTW. 🌈 👵 ♿️👩🏾 Na Foursys, celebramos a diversidade e acreditamos que são as diferentes ideias e perspectivas…"}, {"mes": "Julho", "empresa": "Fundação Butantan", "cargo": "ANALISTA DE PROJETOS DE INOVACAO SR", "link": "https://www.linkedin.com/jobs/view/4445184555/", "modalidade": "-", "setor": "Saúde e Farmacêutico", "senioridade": "Sênior", "familia": "Analista", "resumo": "Por que trabalhar conosco? O Butantan é o maior produtor de vacinas e soros da América Latina e o principal fabricante de imunizantes contra a gripe (influenza) do hemisfério Sul. Referência mundial de eficiência e quali…"}, {"mes": "Julho", "empresa": "Globalsat Brasil", "cargo": "Analista de Inovação e Desenvolvimento Tecnológico Pleno", "link": "https://www.linkedin.com/jobs/view/4437292748/", "modalidade": "Presencial", "setor": "Telecomunicações", "senioridade": "Pleno", "familia": "Analista", "resumo": "MISSÃO DO CARGO: Atuar como agente técnico-operacional da Globalsat, apoiando o desenvolvimento, validação e integração de soluções tecnológicas por meio de parcerias, inovação aberta e projetos internos. O cargo tem com…"}, {"mes": "Julho", "empresa": "Grendene", "cargo": "Analista de Inovação", "link": "https://facapartegrendene.gupy.io/job/eyJqb2JJZCI6MTE3NjQxNjAsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Presencial", "setor": "Varejo e Bens de Consumo", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Descrição da vaga Já pensou em trabalhar em uma das empresas que mais produzem calçados no mundo? E que além de produzir, ainda realiza sonhos? Este é o seu desejo? Então, a Grendene é o seu lugar! Nossa área industrial…"}, {"mes": "Julho", "empresa": "Grupo CSC", "cargo": "Analista de Inovação e Fomento", "link": "https://www.linkedin.com/jobs/view/4434918531/", "modalidade": "Presencial", "setor": "Logística e Transporte", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Sobre a vaga Principais atividades: Monitorar e mapear editais e linhas de fomento à inovação (FAPEMIG, FINEP, BNDES, EMBRAPII, FAPs estaduais, SEBRAE e programas setoriais); Apoiar a avaliação de aderência das oportunid…"}, {"mes": "Julho", "empresa": "Grupo EPR", "cargo": "Analista de Inovação", "link": "https://www.linkedin.com/jobs/view/4441644156/", "modalidade": "Presencial", "setor": "Logística e Transporte", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Estamos em busca de um(a) Analista Pleno de Inovação (Gestão de projetos e governança do portfólio de inovação) para integrar nosso time de Inovação. Procuramos um(a) profissional com perfil analítico, colaborativo e pro…"}, {"mes": "Julho", "empresa": "GRUPO NC", "cargo": "Especialista de Portfólio e Inovação (Go-to-Market)", "link": "https://www.linkedin.com/jobs/view/4423247958/", "modalidade": "Não informado", "setor": "Saúde e Farmacêutico", "senioridade": "Especialista", "familia": "Especialista", "resumo": "Sobre a vaga Estamos buscando profissionais para a posição de Especialista de Portfólio e Inovação, com foco em estratégia de go-to-market para novos produtos. Buscamos um perfil dinâmico e estratégico para avaliação e r…"}, {"mes": "Julho", "empresa": "Grupo Patrimar", "cargo": "ANALISTA DE INOVAÇÃO JR", "link": "https://www.linkedin.com/jobs/view/4425953434/", "modalidade": "Presencial", "setor": "Construção Civil e Imobiliário", "senioridade": "Júnior", "familia": "Analista", "resumo": "O(A) candidato(a) será responsável por conduzir programa de intraempreendedorismo, fomentando o tema entre os colaboradores e habilitando-os na condução e na utilização de ferramentas em projetos dessa nature za; Promove…"}, {"mes": "Julho", "empresa": "Grupo Skill", "cargo": "Auxiliar de inovação - SP", "link": "https://www.linkedin.com/jobs/view/4446462997/", "modalidade": "Presencial", "setor": "Tecnologia da Informação", "senioridade": "Assistente / Auxiliar", "familia": "Assistente / Auxiliar", "resumo": "Você é organizado(a), curioso(a) e ama conectar criatividade com resultados? Então essa vaga pode ser o seu lugar! Estamos em busca de alguém para fortalecer nossa cultura inovadora e apoiar nosso Sistema de Gestão da In…"}, {"mes": "Julho", "empresa": "Hypera", "cargo": "Analista de Inovação Júnior", "link": "https://www.linkedin.com/jobs/view/4436643379/", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Júnior", "familia": "Analista", "resumo": "Descrição da vaga Buscamos talentos que possam transformar possibilidades em realidade, que contribuam para nos manter como a melhor e mais completa empresa farmacêutica brasileira, participando da vida das pessoas para…"}, {"mes": "Julho", "empresa": "IEBT Innovation", "cargo": "Analista de Inovação - Conexão e Desenvolvimento de Hubs", "link": "https://www.linkedin.com/jobs/view/4435018179/", "modalidade": "Presencial", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Não especificado", "familia": "Analista", "resumo": "O Hub de Guaxupé busca um(a) Analista de Projetos e Comunidade para atuar na consolidação do Hub como um ambiente de inovação, empreendedorismo e desenvolvimento territorial. A posição combina acompanhamento da operação…"}, {"mes": "Julho", "empresa": "Inova, Laboratório de Inovação do MPRJ", "cargo": "Especialista em Inovação Pública e Adoção", "link": "https://inova-mprj.notion.site/inovacao-e-adocao", "modalidade": "Híbrido", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Especialista", "familia": "Especialista", "resumo": "## Por que esta oportunidade é diferente --- ### Impacto social Você contribuirá para que produtos, tecnologias e novas formas de trabalhar gerem impacto real na atuação do Ministério Público, ajudando a garantir que boa…"}, {"mes": "Julho", "empresa": "Jobbol", "cargo": "Analista de Inovação", "link": "https://www.linkedin.com/jobs/view/4445946810/", "modalidade": "Presencial", "setor": "Tecnologia da Informação", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Sobre a vaga Indústria de Máquinas e Equipamentos Industriais busca profissional Analista de Inovação em Cascavel (14 de Novembro). A Consilos oferece serviços de consultoria empresarial focados em otimização de processo…"}, {"mes": "Julho", "empresa": "Kunumi", "cargo": "Analista de Fomento para Projetos de Financiamento de Pesquisa e Inovação", "link": "https://www.linkedin.com/jobs/view/4410704322", "modalidade": "Remoto", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Estamos em busca de pessoas fascinadas por criar um futuro melhor, que sejam inquietas, tenham coragem para desafiar o comum, que valorizem a diversidade de ideias e acreditem no potencial transformador da colaboração ve…"}, {"mes": "Julho", "empresa": "Kunumi", "cargo": "Pessoa Gestora da Rede de Parcerias", "link": "https://www.linkedin.com/jobs/view/4405687640", "modalidade": "Remoto", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Não especificado", "familia": "Outro", "resumo": "Estamos em busca de pessoas fascinadas por criar um futuro melhor, que sejam inquietas, tenham coragem para desafiar o comum, que valorizem a diversidade de ideias e acreditem no potencial transformador da colaboração ve…"}, {"mes": "Julho", "empresa": "Laboratório IBASA", "cargo": "Analista de Inovação e Mercado", "link": "https://www.linkedin.com/jobs/view/4429058137", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Não especificado", "familia": "Analista", "resumo": "Somos uma empresa familiar do ramo farmacêutico veterinário, fundada em 1990. 🏡🐾 Nossa missão é promover o bem-estar animal 🐶🐱, desenvolvendo, fabricando e comercializando produtos veterinários eficazes e de alta qualida…"}, {"mes": "Julho", "empresa": "Libbs Farmacêutica", "cargo": "Analista de Inovação Pl", "link": "https://www.linkedin.com/jobs/view/4429417694", "modalidade": "Remoto", "setor": "Saúde e Farmacêutico", "senioridade": "Pleno", "familia": "Analista", "resumo": "Somos uma empresa farmacêutica brasileira que há mais de 65 anos trata da vida. Com o propósito de \"transformar conhecimento em saúde\", construímos nossa história com ousadia, inovação e espírito visionário. Nossa razão…"}, {"mes": "Julho", "empresa": "Marcopolo S.A.", "cargo": "ASSISTENTE DE INOVAÇÃO", "link": "https://www.linkedin.com/jobs/view/4428552122/", "modalidade": "Presencial", "setor": "Automotivo e Mobilidade", "senioridade": "Assistente / Auxiliar", "familia": "Assistente / Auxiliar", "resumo": "Sobre a vaga Você tem interesse na área de inovação? Gostaria de ter oportunidade de aprender ainda mais nessa área em uma grande empresa? Venha com a gente construir a Marcopolo do Futuro! Cadastre-se para vaga de Assis…"}, {"mes": "Julho", "empresa": "Myralis", "cargo": "Analista de Inovação Jr", "link": "https://www.linkedin.com/jobs/view/4416418989/", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Júnior", "familia": "Analista", "resumo": "Nível: Analista Cursos de: Information Systems, Information Technology,(Administração Organizacional/ Administração Financeira / Comunicação / Ética e Cidadania / Prevenção e Saúde / Inclusão Digital (Pacote Office) / So…"}, {"mes": "Julho", "empresa": "Neo Ventures", "cargo": "Analista de Inovação Aberta - Bolsista FAPEMIG", "link": "https://www.linkedin.com/jobs/view/4418048976", "modalidade": "Presencial", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Bolsista / Trainee / Estágio", "familia": "Analista", "resumo": "Neo Ventures Innovation | Presencial – Belo Horizonte/MG Na Neo Ventures, acreditamos que inovação se constrói através de conexões, experimentação e execução com impacto real. Desde 2018, atuamos impulsionando organizaçõ…"}, {"mes": "Julho", "empresa": "Orizon", "cargo": "Especialista Inovação", "link": "https://orizon.gupy.io/job/eyJqb2JJZCI6MTE2Mzk2NzUsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Presencial", "setor": "Meio Ambiente e Saneamento", "senioridade": "Especialista", "familia": "Especialista", "resumo": "Descrição da vaga Descrição da vaga Buscamos uma pessoa para atuar como gestor(a) de ROI tecnológico, identificando, testando e escalando soluções já disponíveis no mercado que aumentem a eficiência operacional, reduzam…"}, {"mes": "Julho", "empresa": "Porto Digital", "cargo": "Analista de Inovação Senior - Negócios Startups", "link": "https://www.linkedin.com/jobs/view/4443053994/", "modalidade": "Presencial", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Sênior", "familia": "Analista", "resumo": "Sobre a vaga Missão Criar, desenvolver e fomentar negócios inovadores e startups, através de programas do Hub Goiás Atividades Desenvolver programas para criação, evolução e tração de Negócios inovadores e Startups Escre…"}, {"mes": "Julho", "empresa": "Porto Digital", "cargo": "COORDENADOR DE INOVAÇÃO", "link": "https://www.linkedin.com/jobs/view/4441400673/", "modalidade": "Presencial", "setor": "Ecossistema de Inovação e Venture Capital", "senioridade": "Coordenação", "familia": "Coordenador(a)", "resumo": "Missão Apoiar na coordenação na execução de projetos e programas de inovação e empreendedorismo, promovendo conexões entre atores do ecossistema atendendo as vertentes de maratona de ideação, qualificação empreendedora,…"}, {"mes": "Julho", "empresa": "PRIO", "cargo": "Coordenador de Inovação", "link": "https://www.linkedin.com/jobs/view/4440992999/", "modalidade": "Presencial", "setor": "Energia, Óleo e Gás", "senioridade": "Coordenação", "familia": "Coordenador(a)", "resumo": "Somos a PRIO, a maior companhia independente de óleo e gás do Brasil. Buscamos continuamente por otimização de processos operacionais e de soluções inovadoras que visem diminuir os custos. Aqui todo trabalho é multidisci…"}, {"mes": "Julho", "empresa": "Serasa Experian", "cargo": "Especialista de Inovação I", "link": "https://www.linkedin.com/jobs/view/4438228763/", "modalidade": "Híbrido", "setor": "Financeiro e Seguros", "senioridade": "Especialista", "familia": "Especialista", "resumo": "A Serasa Experian é a primeira e a maior Datatech do Brasil. Líder em soluções de inteligência para análise de riscos e oportunidades, com foco nas jornadas de crédito, autenticação e prevenção à fraude. Com tecnologia d…"}, {"mes": "Julho", "empresa": "Sírio-Libanês", "cargo": "Especialista de Inovação", "link": "https://www.linkedin.com/jobs/view/4434462930/", "modalidade": "Presencial", "setor": "Saúde e Farmacêutico", "senioridade": "Especialista", "familia": "Especialista", "resumo": "Somos uma instituição de saúde centenária, que através da sua atuação em mais de 60 especialidades, tem como propósito levar vida plena e digna a um número cada vez maior de pessoas. A cada ano, contribuímos para a forma…"}, {"mes": "Julho", "empresa": "Tahto", "cargo": "COORDENADOR DE PROJETOS ESTRATÉGICOS E INOVAÇÃO", "link": "https://vemsertahto.gupy.io/job/eyJqb2JJZCI6MTE2MDYwODcsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=share_link", "modalidade": "Remoto", "setor": "Outro", "senioridade": "Coordenação", "familia": "Coordenador(a)", "resumo": "Descrição da vaga Somos a Tahto, uma empresa com uma nova mentalidade de negócios, que usa a tecnologia não apenas para criar soluções de atendimento ao cliente, mas para manter o ser humano no centro de tudo o que fazem…"}, {"mes": "Julho", "empresa": "Unimed do Brasil", "cargo": "Analista de Inovação Pl", "link": "https://www.linkedin.com/jobs/view/4423169570", "modalidade": "Híbrido", "setor": "Saúde e Farmacêutico", "senioridade": "Pleno", "familia": "Analista", "resumo": "Faça parte do maior sistema de cooperativas de saúde do mundo! Nosso propósito é cuidar de pessoas, prezando pela diversidade e enxergando o valor único de cada um. Buscamos a excelência, exploramos todo o nosso potencia…"}, {"mes": "Julho", "empresa": "Vigor", "cargo": "Analista de P&D Jr Inovação", "link": "https://www.linkedin.com/jobs/view/4427340890", "modalidade": "Presencial", "setor": "Agro e Alimentos", "senioridade": "Júnior", "familia": "Analista", "resumo": "Nosso sucesso é fruto da dedicação e do talento das pessoas que trabalham conosco. Construímos uma cultura forte, baseada em valores sólidos, que guiam nossas decisões, estratégias e a busca por profissionais alinhados a…"}]};
+
+function el(tag, opts){
+  const e = document.createElement(tag);
+  if(opts){
+    if(opts.cls) e.className = opts.cls;
+    if(opts.text !== undefined) e.textContent = opts.text;
+    if(opts.html !== undefined) e.innerHTML = opts.html;
+    if(opts.attrs) for(const k in opts.attrs) e.setAttribute(k, opts.attrs[k]);
+  }
+  return e;
+}
+
+function fmt1(n){ return (Math.round(n*10)/10).toString().replace('.', ','); }
+
+function pctSpan(count, total, pct){
+  const s = el('span', {cls:'bar-value nowrap'});
+  const b = el('b', {text: count});
+  s.appendChild(b);
+  s.appendChild(document.createTextNode('/' + total + ' · ' + fmt1(pct) + '%'));
+  return s;
+}
+
+function renderBarList(container, items, opts){
+  container.innerHTML = '';
+  // A barra representa a fatia real do total (0-100%), nunca o valor
+  // renormalizado pelo maior item da própria lista — do contrário o item
+  // no topo de qualquer lista sempre preenche 100%, mesmo quando sua
+  // porcentagem real é baixa, e o comprimento das barras deixa de ser
+  // comparável entre gráficos diferentes.
+  const total = opts.total || DATA.meta.total_vagas;
+  items.forEach(function(d){
+    const v = opts.value(d);
+    const pct = opts.pct ? opts.pct(d) : (v/total*100);
+    // .bar-row é "display:contents" (ver CSS) — não tem caixa própria, então
+    // o tooltip via atributo title vai em cada filho real (label/track/value),
+    // não na linha. Assim o hover funciona em qualquer ponto da barra.
+    const titleText = opts.label(d) + ': ' + v + ' de ' + total + ' vagas (' + fmt1(pct) + '%)';
+    const row = el('div', {cls:'bar-row'});
+    const label = el('div', {cls:'label', text: opts.label(d), attrs:{title: titleText}});
+    const track = el('div', {cls:'bar-track', attrs:{title: titleText}});
+    const fill = el('div', {cls:'bar-fill ' + opts.color});
+    fill.style.width = Math.max(4, pct) + '%';
+    track.appendChild(fill);
+    const value = pctSpan(v, total, pct);
+    value.setAttribute('title', titleText);
+    row.appendChild(label);
+    row.appendChild(track);
+    row.appendChild(value);
+    container.appendChild(row);
+  });
+}
+
+function renderChips(container, items, opts){
+  container.innerHTML = '';
+  items.forEach(function(d){
+    const chip = el('span', {cls:'chip ' + (opts.cls||'')});
+    chip.appendChild(document.createTextNode(opts.label(d) + ' '));
+    const b = el('b', {text: opts.value(d)});
+    chip.appendChild(b);
+    container.appendChild(chip);
+  });
+}
+
+/* ---------- meta / hero stats ---------- */
+function initHero(){
+  document.getElementById('meta-total').textContent = DATA.meta.total_vagas;
+  const meses = Object.keys(DATA.meta.meses);
+  document.getElementById('stat-total').textContent = DATA.meta.total_vagas;
+  document.getElementById('stat-empresas').textContent = DATA.panorama.empresas.length;
+  document.getElementById('stat-setores').textContent = DATA.panorama.setor.length;
+  document.getElementById('stat-meses').textContent = meses.length;
+}
+
+/* ---------- section 1: keywords ---------- */
+function initKeywords(){
+  const titleItems = DATA.title_keywords.slice(0, 10);
+  renderBarList(document.getElementById('chart-title-kw'), titleItems, {
+    label: d => d.word, value: d => d.count, color: 'magenta'
+  });
+  const descItems = DATA.desc_keywords.slice(0, 10);
+  renderBarList(document.getElementById('chart-desc-kw'), descItems, {
+    label: d => d.word, value: d => d.count, color: 'roxo'
+  });
+  const rareLabels = ['FINEP','FAPESP','FAPEMIG','CNPq','CAPES','BNDES','SEBRAE',
+    'Lei do Bem','Deep tech','Due diligence','Hackathon','Mentoria','CB Insights',
+    'Propriedade intelectual / patentes'];
+  const rareItems = DATA.taxonomy.filter(t => rareLabels.indexOf(t.label) !== -1)
+    .sort((a,b) => b.count - a.count);
+  renderChips(document.getElementById('chips-rare'), rareItems, {
+    label: d => d.label, value: d => d.count + '/' + DATA.meta.total_vagas, cls: 'rare'
+  });
+}
+
+/* ---------- section 2: competencias ---------- */
+const SKILL_TABS = ['Ferramentas & métodos','Comportamentais','Formação & idiomas','Ecossistema & fomento'];
+function renderSkillTab(cat){
+  const items = DATA.taxonomy.filter(t => t.categoria === cat).slice(0, 10);
+  document.getElementById('skill-chart-title').textContent = cat;
+  renderBarList(document.getElementById('chart-skills'), items, {
+    label: d => d.label, value: d => d.count, color: 'magenta'
+  });
+}
+function initSkills(){
+  const tabrow = document.getElementById('skill-tabs');
+  tabrow.innerHTML = '';
+  SKILL_TABS.forEach(function(cat, i){
+    const btn = el('button', {cls: 'tabbtn' + (i===0?' active':''), text: cat});
+    btn.addEventListener('click', function(){
+      tabrow.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderSkillTab(cat);
+    });
+    tabrow.appendChild(btn);
+  });
+  renderSkillTab(SKILL_TABS[0]);
+}
+
+/* ---------- section 3: panorama ---------- */
+function initPanorama(){
+  renderBarList(document.getElementById('chart-setor'), DATA.panorama.setor.map(d=>({k:d[0],v:d[1]})), {
+    label: d => d.k, value: d => d.v, color: 'roxo'
+  });
+
+  const modMap = {};
+  DATA.panorama.modalidade.forEach(function(d){
+    const key = (d[0] === '-' || d[0] === 'Não informado') ? 'Não informado' : d[0];
+    modMap[key] = (modMap[key]||0) + d[1];
+  });
+  const modItems = Object.keys(modMap).map(k => ({k:k, v:modMap[k]})).sort((a,b)=>b.v-a.v);
+  renderBarList(document.getElementById('chart-modalidade'), modItems, {
+    label: d => d.k, value: d => d.v, color: 'turq'
+  });
+
+  renderBarList(document.getElementById('chart-senioridade'), DATA.panorama.senioridade.map(d=>({k:d[0],v:d[1]})), {
+    label: d => d.k, value: d => d.v, color: 'magenta'
+  });
+
+  const monthWrap = document.getElementById('month-compare');
+  monthWrap.innerHTML = '';
+  const mesOrder = ['Dezembro','Novembro','Outubro','Setembro','Agosto','Julho','Junho','Maio','Abril','Março','Fevereiro','Janeiro'];
+  const mesesPresentes = Object.keys(DATA.meta.meses).sort((a,b)=> mesOrder.indexOf(a)-mesOrder.indexOf(b));
+  mesesPresentes.forEach(function(mes){
+    const card = el('div', {cls:'month-card'});
+    const t = el('div', {cls:'m-title', text: mes + ' 2026'});
+    const v = el('div', {cls:'m-value nowrap'});
+    v.appendChild(document.createTextNode(DATA.meta.meses[mes]));
+    const span = el('span', {text: 'vagas'});
+    v.appendChild(span);
+    card.appendChild(t);
+    card.appendChild(v);
+    monthWrap.appendChild(card);
+  });
+}
+
+/* ---------- section 5: explorer ---------- */
+function uniqueSorted(arr){ return Array.from(new Set(arr)).sort((a,b)=>a.localeCompare(b,'pt-BR')); }
+
+function populateFilters(){
+  const mesOrder = ['Dezembro','Novembro','Outubro','Setembro','Agosto','Julho','Junho','Maio','Abril','Março','Fevereiro','Janeiro'];
+  const meses = Array.from(new Set(DATA.explorer.map(d=>d.mes))).sort((a,b)=>mesOrder.indexOf(a)-mesOrder.indexOf(b));
+  const setores = uniqueSorted(DATA.explorer.map(d=>d.setor));
+  const modalidades = uniqueSorted(DATA.explorer.map(d=>d.modalidade));
+  const senioridades = uniqueSorted(DATA.explorer.map(d=>d.senioridade));
+
+  function fill(id, values, allLabel){
+    const sel = document.getElementById(id);
+    sel.innerHTML = '';
+    sel.appendChild(el('option', {text: allLabel, attrs:{value:''}}));
+    values.forEach(v => sel.appendChild(el('option', {text: v, attrs:{value:v}})));
+  }
+  fill('f-mes', meses, 'Todos os meses');
+  fill('f-setor', setores, 'Todos os setores');
+  fill('f-modalidade', modalidades, 'Todas as modalidades');
+  fill('f-senioridade', senioridades, 'Todas as senioridades');
+}
+
+function renderExplorer(){
+  const q = document.getElementById('f-busca').value.trim().toLowerCase();
+  const fMes = document.getElementById('f-mes').value;
+  const fSetor = document.getElementById('f-setor').value;
+  const fMod = document.getElementById('f-modalidade').value;
+  const fSen = document.getElementById('f-senioridade').value;
+
+  const filtered = DATA.explorer.filter(function(d){
+    if(fMes && d.mes !== fMes) return false;
+    if(fSetor && d.setor !== fSetor) return false;
+    if(fMod && d.modalidade !== fMod) return false;
+    if(fSen && d.senioridade !== fSen) return false;
+    if(q){
+      const hay = (d.empresa + ' ' + d.cargo).toLowerCase();
+      if(hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+
+  const list = document.getElementById('explorer-list');
+  list.innerHTML = '';
+  document.getElementById('explorer-count').textContent = filtered.length + ' de ' + DATA.explorer.length + ' vagas';
+
+  if(filtered.length === 0){
+    list.appendChild(el('div', {cls:'empty-state', text:'Nenhuma vaga encontrada com esses filtros. Tente limpar algum campo.'}));
+    return;
+  }
+
+  let currentMonth = null;
+  filtered.forEach(function(d){
+    if(d.mes !== currentMonth){
+      currentMonth = d.mes;
+      const count = filtered.filter(x => x.mes === currentMonth).length;
+      const sep = el('div', {cls:'month-sep'});
+      sep.appendChild(document.createTextNode(currentMonth + ' 2026'));
+      const n = el('span', {cls:'n nowrap', text: count + ' vaga' + (count>1?'s':'')});
+      sep.appendChild(n);
+      list.appendChild(sep);
+    }
+    // Estrutura em 4 blocos irmãos (header, tags, resumo, cta) — não um
+    // botão aninhado dentro do header — pra permitir reordenar só o cta
+    // pro fim do card em telas estreitas via CSS (grid-area/order), sem
+    // depender de flex-wrap "quebrar" numa faixa de largura incômoda.
+    const card = el('div', {cls:'job-card'});
+    const header = el('div', {cls:'jc-header'});
+    const h4 = el('h4', {text: d.cargo});
+    const comp = el('div', {cls:'company', text: d.empresa});
+    header.appendChild(h4);
+    header.appendChild(comp);
+
+    const cta = el('a', {text: d.link ? 'Ver vaga original ↗' : 'Link indisponível'});
+    cta.className = 'cta' + (d.link ? '' : ' disabled');
+    if(d.link){
+      cta.setAttribute('href', d.link);
+      cta.setAttribute('target', '_blank');
+      cta.setAttribute('rel', 'noopener noreferrer');
+    }
+
+    const tags = el('div', {cls:'tags'});
+    [d.setor, d.modalidade, d.senioridade].forEach(function(t){
+      tags.appendChild(el('span', {cls:'tag', text: t}));
+    });
+
+    const resumo = el('p', {cls:'resumo', text: d.resumo});
+
+    card.appendChild(header);
+    card.appendChild(cta);
+    card.appendChild(tags);
+    card.appendChild(resumo);
+
+    list.appendChild(card);
+  });
+}
+
+function initExplorer(){
+  populateFilters();
+  ['f-mes','f-setor','f-modalidade','f-senioridade'].forEach(function(id){
+    document.getElementById(id).addEventListener('change', renderExplorer);
+  });
+  document.getElementById('f-busca').addEventListener('input', renderExplorer);
+  document.getElementById('f-reset').addEventListener('click', function(){
+    document.getElementById('f-busca').value = '';
+    ['f-mes','f-setor','f-modalidade','f-senioridade'].forEach(id => document.getElementById(id).value = '');
+    renderExplorer();
+  });
+  renderExplorer();
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  initHero();
+  initKeywords();
+  initSkills();
+  initPanorama();
+  initExplorer();
+  document.getElementById('year-now').textContent = new Date().getFullYear();
+});
+
+</script>
+</body>
+</html>
