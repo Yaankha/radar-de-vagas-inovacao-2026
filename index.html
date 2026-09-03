@@ -210,6 +210,7 @@ section.block:last-of-type{border-bottom:none;}
 .bar-fill.magenta{background:var(--magenta);}
 .bar-fill.roxo{background:var(--roxo);}
 .bar-fill.turq{background:var(--turq);}
+.bar-fill.neutro{background:#8C8C8C;} /* cinza médio da marca — sinaliza "não é um nível", não é mais uma cor de dado comparável a magenta/roxo/turq */
 .bar-value{
   font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);
   white-space:nowrap;text-align:right;cursor:help;
@@ -613,7 +614,7 @@ footer .credit a:hover{text-decoration:underline;}
     <div class="byline">
       <span>Análise e curadoria: <a href="https://www.linkedin.com/in/yaankha/" target="_blank" rel="noopener noreferrer">Yaankha Bharbara</a></span>
       <span class="dot">·</span>
-      <span>Atualizado em agosto de 2026</span>
+      <span>Atualizado em setembro de 2026</span>
       <span class="dot">·</span>
       <span id="meta-periodo">–</span>
     </div>
@@ -711,7 +712,7 @@ footer .credit a:hover{text-decoration:underline;}
 
     <div class="panorama-grid">
       <div class="card">
-        <h3>Nível hierárquico <span class="muted">quando o título declara</span></h3>
+        <h3>Nível hierárquico <span class="muted">nº de vagas</span></h3>
         <div class="barlist" id="chart-nivel"></div>
         <p class="chart-note" id="note-nivel"></p>
       </div>
@@ -891,7 +892,8 @@ function renderBarList(container, items, opts){
     const track = el('div', {cls:'bar-track', attrs:{
       title: titleText, role: 'img', 'aria-label': titleText
     }});
-    const fill = el('div', {cls:'bar-fill ' + opts.color});
+    const corItem = typeof opts.color === 'function' ? opts.color(d) : opts.color;
+    const fill = el('div', {cls:'bar-fill ' + corItem});
     fill.style.width = Math.max(4, pct) + '%';
     track.appendChild(fill);
     const value = pctSpan(v, total, pct);
@@ -1131,25 +1133,32 @@ function initPanorama(){
     label: d => d.k, value: d => d.v, color: 'turq'
   });
 
-  // Nível: base = só as vagas cujo título declara posição hierárquica.
+  // Nível: as 9 barras coloridas são só as vagas cujo título declara posição
+  // hierárquica (dado ordinal — "Especialista"/"Consultor(a)" são família de
+  // cargo, não nível, e por isso não entram na sequência). Mas todo percentual
+  // do painel é calculado sobre o total de vagas (92), sem exceção — por isso
+  // a barra "Sem nível declarado" soma o restante e fecha a lista em 100%,
+  // em vez de deixar a base menor (47) escondida numa nota de rodapé.
   const senMap = {};
   DATA.panorama.senioridade.forEach(d => { senMap[d[0]] = d[1]; });
   const nivelItems = NIVEIS.filter(k => senMap[k]).map(k => ({k:k, v:senMap[k]}));
   const baseNivel = nivelItems.reduce((a,b) => a + b.v, 0);
-  renderBarList(document.getElementById('chart-nivel'), nivelItems, {
-    label: d => d.k, value: d => d.v, color: 'magenta',
-    total: baseNivel, pct: d => d.v / baseNivel * 100
-  });
-
   const semNivel = totalVagas - baseNivel;
   const semMarcador = senMap['Não especificado'] || 0;
   const familiaNoTitulo = semNivel - semMarcador;
+  nivelItems.push({k: 'Sem nível declarado no título', v: semNivel, neutro: true});
+  renderBarList(document.getElementById('chart-nivel'), nivelItems, {
+    label: d => d.k, value: d => d.v, color: d => d.neutro ? 'neutro' : 'magenta',
+    total: totalVagas, pct: d => d.v / totalVagas * 100
+  });
+
   document.getElementById('note-nivel').innerHTML =
-    '<strong>Base da análise:</strong> ' + baseNivel + ' das ' + totalVagas + ' vagas. ' +
-    'Ficaram de fora ' + semMarcador + ' vagas sem nenhum marcador de nível no ' +
-    'título e ' + familiaNoTitulo + ' vagas anunciadas como “Especialista” ou ' +
-    '“Consultor(a)”, que indicam família de cargo, não senioridade. As barras ' +
-    'estão em ordem hierárquica, não por frequência.';
+    '<strong>Sobre a barra cinza:</strong> soma ' + semMarcador + ' vagas sem ' +
+    'nenhum marcador de nível no título e ' + familiaNoTitulo + ' vagas ' +
+    'anunciadas como “Especialista” ou “Consultor(a)”, que indicam família de ' +
+    'cargo, não senioridade — por isso ficam fora da sequência hierárquica. ' +
+    'As 9 barras coloridas estão em ordem hierárquica, não por frequência; ' +
+    'só a barra cinza é ordenada por tamanho, no fim da lista.';
 
   renderBarList(document.getElementById('chart-familia'), DATA.panorama.familia.map(d=>({k:d[0],v:d[1]})), {
     label: d => d.k, value: d => d.v, color: 'roxo'
